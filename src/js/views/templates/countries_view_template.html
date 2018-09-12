@@ -1,0 +1,32 @@
+<div id="country-list-template">         
+    <table class="country-list-table">
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th> Flag</th>
+                <th> Capital</th>
+                <th> Location</th>
+                <th> Population</th>
+                <th> Languages</th>
+                <th> Currency</th>
+                <th>Region</th>
+                <th></th>
+            </tr>
+       </thead>
+        <tbody >
+            <% _.each(countries, function(country) { %>
+                <tr>
+                    <td><%= country.name %></td>
+                    <td><img width=100 src="<%= country.flag %>"/></td>
+                    <td><%= country.capital %></td>
+                    <td><%= country.latlng %></td>
+                    <td><%= country.population %></td>
+                    <td><%= country.languages[0]["name"] %></td>
+                    <td><%= country.currencies[0]["name"] %></td>
+                    <td><%= country.region %></td>
+                    <td><button class="secondary-btn">Add to my favourites</button></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>  
+</div>

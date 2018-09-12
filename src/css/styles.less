@@ -1,0 +1,66 @@
+// Variables
+
+@background-color: #F0F0F0;
+@font-family: Tahoma;
+@primary-color:#4285F4;
+@secondary-color: #36802D;
+@bigger-font: 20px;
+@text-color:#696969;
+@btn-shadow:  3px 4px 5px #696969;
+
+body{
+    font-family: @font-family;
+    background: @background-color;
+    font-size:@bigger-font;
+    color:@text-color;
+}
+
+.btn {
+    color:white;
+	border: none;
+	.border-radius(8px);
+	cursor: pointer;
+}
+
+.primary-btn:extend(.btn) {
+    background-color: @primary-color;
+    width:150px;
+	height:45px;
+    font-size:@bigger-font;
+    &:hover {
+        box-shadow:@btn-shadow;
+    }
+}
+.secondary-btn:extend(.btn) {
+    font-size:14px;
+	width:110px;
+    background-color:@secondary-color;
+    .border-radius(5px);
+    &:hover {
+        box-shadow:@btn-shadow;
+    }
+}
+
+#container {
+    padding:60px;
+}
+
+.text-input {
+	height:30px;
+	width:400px;
+    font-size: 25px;
+    color:@text-color;
+}
+
+table.country-list-table {
+    border-collapse: collapse;
+    td,th {
+        border-bottom: 2px solid lightgrey;
+	    padding: 20px;
+	    text-align: center;
+    }
+}
+
+.border-radius(@radius){
+	border-radius:@radius
+}
