@@ -5,6 +5,7 @@
 @primary-color:#4285F4;
 @secondary-color: #36802D;
 @bigger-font: 20px;
+@smaller-font:10px;
 @text-color:#696969;
 @btn-shadow:  3px 4px 5px #696969;
 
@@ -52,15 +53,69 @@ body{
     color:@text-color;
 }
 
-table.country-list-table {
-    border-collapse: collapse;
-    td,th {
-        border-bottom: 2px solid lightgrey;
-	    padding: 20px;
-	    text-align: center;
-    }
-}
+// table.country-list-table {
+//     border-collapse: collapse;
+//     td,th {
+//         border-bottom: 2px solid lightgrey;
+// 	    padding: 20px;
+// 	    text-align: center;
+//     }
+// }
 
 .border-radius(@radius){
 	border-radius:@radius
+}
+
+.country-card {
+    width:400px;
+    height:620px;
+    .border-radius(6px);
+    background: white;
+    box-shadow: 2px 3px 12px 3px #83878D;
+    float:left;
+    margin:10px;
+}
+
+.title{
+    width:400px;
+    float:left;
+    
+}
+
+.title img {
+    padding:10px;
+    float:left
+}
+
+.title .country-name {
+    font-size:25px;
+    width:250px;
+    float:left;
+    padding:10px;
+    font-weight:bold;
+}
+ul {
+    list-style: none;
+   
+  }
+  ul li {
+      text-align: left;
+      font-size:90%;
+     }
+
+ul li span {
+    font-size:110%;
+   font-weight:bold;
+}
+
+.fav-btn {
+    font-size:22px;
+    margin-left: 20px;
+    padding:5px;
+    color:@primary-color;
+    background: none;
+    border:none;
+    font-weight: bold;
+    cursor:pointer;
+  
 }

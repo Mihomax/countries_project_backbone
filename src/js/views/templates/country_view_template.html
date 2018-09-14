@@ -1,12 +1,18 @@
-    
-    <td><%= country.name %></td>
-    <td><img width=100 src="<%= country.flag %>"/></td>
-    <td><%= country.capital %></td>
-    <td><%= country.latlng %></td>
-    <td><%= country.population %></td>
-    <td><%= country.languages[0]["name"] %></td>
-    <td><%= country.currencies[0]["name"] %></td>
-    <td><%= country.region %></td>
-    <td><button class="secondary-btn">Add to my favourites</button></td>
 
-   
+    <div class="country-card">
+            <div class="title">
+                <img width=100 height=60 src="<%= country.flag %>" >
+                <span class= "country-name"><%= country.name %></span>
+            </div>
+            <img width=400 height=300 src="<%= country.mapURL %>" >
+            <ul>
+                <li>Capital - <span><%= country.capital %></span></li>
+                <li>Population - <span><%= country.population %></span></li>
+                <li>Languages - <span><%= country.languages %></span></li>
+                <li>Currency - <span><%= country.currencies[0]["name"] %></span></li>
+                <li>Region - <span><%= country.region %></span></li>
+            </ul>
+            <button class="fav-btn">Add to my favourites</button>
+    </div>
+
+

@@ -1,0 +1,28 @@
+<table class="country-list-table">
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th> Flag</th>
+                <th> Capital</th>
+                <th> Location</th>
+                <th> Population</th>
+                <th> Languages</th>
+                <th> Currency</th>
+                <th>Region</th>
+                <th></th>
+            </tr>
+       </thead>
+        <tbody id="country-list-body">
+         
+        </tbody>
+    </table>  
+    
+    <td><%= country.name %></td>
+    <td><img width=100 src="<%= country.flag %>"/></td>
+    <td><%= country.capital %></td>
+    <td><img width=400 src="<%= country.mapURL %>"/></td>
+    <td><%= country.population %></td>
+    <td><%= country.languages %></td>
+    <td><%= country.currencies[0]["name"] %></td>
+    <td><%= country.region %></td>
+    <td><button class="secondary-btn">Add to my favourites</button></td> 

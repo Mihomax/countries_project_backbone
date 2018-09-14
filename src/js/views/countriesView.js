@@ -1,7 +1,7 @@
 
-define(['jquery','underscore','backbone','views/countryView','tpl!views/templates/countries_view_template.html'],
+define(['jquery','underscore','backbone','views/countryView'],
 
-function($,_,Backbone,CountryView,CountriesViewTemplate){
+function($,_,Backbone,CountryView){
     //will list the countries by receiving collection via common object (bus)
 var CountriesView = Backbone.View.extend({
     
@@ -20,26 +20,16 @@ var CountriesView = Backbone.View.extend({
         });        
     },
 
-    //
     render: function () {
         this.$el.empty();
-        this.$el.html(CountriesViewTemplate);
+        var self = this;
         this.model.each(function (eachCountry)  {
             var tempView = new CountryView({model: eachCountry});
-            $("#country-list-body").append(tempView.render().$el);
+            self.$el.append(tempView.render().$el);
         });
                     
         return this;
-    }
-
-
-    // render: function () {
-    //     this.$el.empty();
-    //     var data = {countries:this.model.toJSON()}; // object must be sent to template
-    //     var template = CountriesViewTemplate;
-    //     this.$el.html(template(data));
-    // }
-    
+    }    
 });
     return CountriesView;
 
