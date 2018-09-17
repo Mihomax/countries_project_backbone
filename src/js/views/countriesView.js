@@ -16,6 +16,9 @@ var CountriesView = Backbone.View.extend({
         this.model.fetch({
             success: function(res) {
                 self.render();
+            },
+            error: function() {
+                throw new Error("Something went wrong");
             }
         });        
     },

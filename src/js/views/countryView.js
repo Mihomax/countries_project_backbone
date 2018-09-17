@@ -7,6 +7,47 @@ var CountryView = Backbone.View.extend({
     initialize: function () {
        
     },
+    events: {
+        "click .fav-btn":"addToStorage"
+    },
+
+    addToStorage: function () {
+
+        //adding data to localstorage
+        
+        var currStorage = localStorage.getItem("userLocalStorage");
+
+        if (currStorage) {
+            var selectedCountry = this.model.toJSON();
+            var countriesArray = JSON.parse(currStorage); 
+
+            for (var i = 0; i <countriesArray.length;i++) {
+                if (countriesArray[i].name ===selectedCountry.name) {
+                    console.log(countriesArray[i].name);
+                    alert("You already have this country in your favorites, please choose another one.");
+                    return false;
+                } 
+            }
+            
+            countriesArray.push(selectedCountry);
+            countriesArray = JSON.stringify(countriesArray);
+            localStorage.setItem("userLocalStorage", countriesArray);
+        }
+        else {
+            var selectedCountry = this.model.toJSON();
+            var countryArray = [selectedCountry];
+            countryArray = JSON.stringify(countryArray);
+            localStorage.setItem("userLocalStorage", countryArray);  
+        }
+
+
+        //changing btn UI
+
+        $('#favBtn').html("V")
+
+
+    },
+
     render: function () {
         var data = {country:this.model.toJSON()};  
         

@@ -14,6 +14,7 @@ body{
     background: @background-color;
     font-size:@bigger-font;
     color:@text-color;
+    margin:0;
 }
 
 .btn {
@@ -41,9 +42,14 @@ body{
         box-shadow:@btn-shadow;
     }
 }
+nav {
+    height: 60px;
+    background: rgb(94, 151, 243); // add less function
+}
 
 #container {
-    padding:60px;
+    padding-top:40px;
+    padding-left:60px;
 }
 
 .text-input {
@@ -117,5 +123,30 @@ ul li span {
     border:none;
     font-weight: bold;
     cursor:pointer;
+    &:hover {
+        text-shadow: 1px 1px #83878D;
+    }
   
+}
+
+.rem-btn:extend(.fav-btn) {
+    color:red;
+    &:hover {
+        font-size:125%;
+    }
+}
+
+.nav-btn {
+    background: none;
+    color:white;
+    font-size: 120%;
+    border:none;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-left:40px;
+    margin-top:10px;
+    cursor:pointer;
+    &:hover {
+        font-weight: bolder;
+    }
 }

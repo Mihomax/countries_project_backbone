@@ -1,8 +1,10 @@
 
-define(['jquery','underscore','backbone', 'views/countrySearchView', 'views/countriesView', "models/mapModel"],
+define(['jquery','underscore','backbone','views/menuView', 'views/countrySearchView', 'views/countriesView', "models/mapModel"],
 
-function($,_,Backbone,CountrySearchView,CountriesView, MapModel){
+function($,_,Backbone,MenuView,CountrySearchView,CountriesView, MapModel){
     var initialize = function(){
+
+    var menuView = new MenuView();
             
     //this guy is just a common object(property) for my both views (CountrySearchView and CountriesView) in order to pass data between them
     var bus = _.extend({},Backbone.Events);

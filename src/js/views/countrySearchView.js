@@ -17,12 +17,18 @@ function($,_,Backbone, CountriesCollection, SearchViewTemplate){
     },
 
     onClickSearch: function () {
-        var typedValue = $("#typedCountry").val();                      
+        var typedValue = $("#typedCountry").val(); 
+        var regex = /^[A-Za-z]+$/;
+        if (typedValue && typedValue.match(regex)) {
+            
         var countries = new CountriesCollection ({url:"https://restcountries.eu/rest/v2/name/" + typedValue}); // my collection with url(endpoint typed by user)
 
         this.bus.trigger("injectCollection", countries)     // publishing event and sending my collection                                                  
         $("#typedCountry").val("");
-        
+        }
+        else {
+            $('#country-list').html("Oops ... please type letters in the field");
+        }
     },
     
     render: function () {
