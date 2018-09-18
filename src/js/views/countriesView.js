@@ -1,16 +1,18 @@
 
-define(['jquery','underscore','backbone','views/countryView'],
+define(['jquery','underscore','backbone','views/countryView', 'tpl!views/templates/country_filter_view.html'],
 
-function($,_,Backbone,CountryView){
+function($,_,Backbone,CountryView, CountryFilterTemplate){
     //will list the countries by receiving collection via common object (bus)
 var CountriesView = Backbone.View.extend({
     
     initialize: function (options) {
-        this.bus = options.bus;
-        this.bus.on("injectCollection", this.injectCollection, this);  
+        if(options.bus) {
+            this.bus = options.bus;
+            this.bus.on("injectCollection", this.injectCollection, this);  
+        }
+
     },
-    injectCollection: function(received) {
-        
+    injectCollection: function(received) { 
         this.model = received;
         var self = this;
         this.model.fetch({
@@ -24,7 +26,9 @@ var CountriesView = Backbone.View.extend({
     },
 
     render: function () {
+        
         this.$el.empty();
+        this.$el.html(CountryFilterTemplate);
         var self = this;
         this.model.each(function (eachCountry)  {
             var tempView = new CountryView({model: eachCountry});

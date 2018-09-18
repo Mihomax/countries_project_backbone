@@ -12,7 +12,9 @@
                 <li>Currency - <span><%= country.currencies[0]["name"] %></span></li>
                 <li>Region - <span><%= country.region %></span></li>
             </ul>
-            <button onclick="$(this).html('&#10003')" class="fav-btn">Add to my favorites</button>
+            <hr>
+            <button onclick="$(this).html('&#10003')" class="fav-btn">Add to my favorites</button><br>
+            <a href="https://en.wikipedia.org/wiki/<%= country.name %>" target="_blank">Click to know more via Wiki</a>
     </div>
 
 
