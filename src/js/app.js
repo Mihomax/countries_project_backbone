@@ -25,23 +25,13 @@ function($,_,Backbone, MenuView, CountrySearchView, CountriesView, CountriesColl
 
         viewHome: function() {
 
-            //this guy is just a common object(property) for my CountrySearchView and CountriesView views, 
-            // which takes and keeps user search value. I pass this 'bus' object when initializing each of them 
-            
-            var bus = _.extend({},Backbone.Events);
-            var countrySearchView = new CountrySearchView({
-                bus:bus
-            });
+            $("#country-list").empty();
+            var countrySearchView = new CountrySearchView({});
             countrySearchView.render();
-
-            // $("#country-list").empty();
-            var countriesView = new CountriesView({
-                el:"#country-list",  
-                bus:bus 
-            });
         },
             
         viewFavorites: function() {
+            $('#searchDiv').empty();
             var currStorage = localStorage.getItem("userLocalStorage");
                 if (!currStorage || currStorage.length <= 2 ) {
                     $('#country-list').html("Your favorites are empty...");
@@ -49,7 +39,7 @@ function($,_,Backbone, MenuView, CountrySearchView, CountriesView, CountriesColl
                 else {
                     currStorage = JSON.parse(currStorage);
                     var countries = new CountriesCollection (currStorage);
-                    var countriesView = new CountriesView({el:"#country-list",model:countries});
+                    var countriesView = new CountriesView({el:"#country-list",collection:countries});
                     countriesView.render();
                 }
         }

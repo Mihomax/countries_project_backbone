@@ -8,6 +8,7 @@ function($, _, Backbone, CountryModel ) {
             this.url = options.url;
         },
         model:CountryModel, 
+        
     });
 
     return Countries;
