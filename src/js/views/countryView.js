@@ -25,6 +25,7 @@ var CountryView = Backbone.View.extend({
         this.$el.empty();        
         var data = {country:this.model.toJSON()};  
         
+        //with initiation of MapModel sending current country's location
         var mapModel = new MapModel ({coords:data.country.latlng }); 
         data.country.mapURL = mapModel.urlRoot;
 

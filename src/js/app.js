@@ -10,6 +10,7 @@ define([
     ],
 
 function($,_,Backbone, MenuView, CountrySearchView, CountriesView, CountriesCollection){
+    
     var initialize = function(){
         Backbone.history.start();
         var menuView = new MenuView({router:router});
@@ -29,22 +30,20 @@ function($,_,Backbone, MenuView, CountrySearchView, CountriesView, CountriesColl
             countrySearchView.render();
         },
             
-     viewFavorites: function() {
+    viewFavorites: function() {
             $('#searchDiv').empty();
             var currStorage = localStorage.getItem("userLocalStorage");
                 if (!currStorage || currStorage.length <= 2 ) {
                     $('#country-list').html("Your favorites are empty...");
                 }
                 else {
-                   
-                //    countries.reset();
                    currStorage = JSON.parse(currStorage);
                    var countries = new CountriesCollection (currStorage);
                    var countriesView = new CountriesView({el:"#country-list",collection:countries});
                    countriesView.render();
                 }
-        }
-        });
+    }
+    });
 
         var router = new AppRouter();
         

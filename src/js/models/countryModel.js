@@ -2,6 +2,8 @@ define('CountryModel',['jquery','underscore','backbone'], function($,_,Backbone)
 
     var Country = Backbone.Model.extend({
 
+        //method will add current country to localstorage
+
     addCountry: function() {
             
         var currStorage = localStorage.getItem("userLocalStorage");
@@ -30,6 +32,7 @@ define('CountryModel',['jquery','underscore','backbone'], function($,_,Backbone)
         }
     },
 
+     // will remove current country from localstorage
     removeCountry: function () {
         var selectedCountry = this.toJSON();
         var currStorage = localStorage.getItem("userLocalStorage");

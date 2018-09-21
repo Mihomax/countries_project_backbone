@@ -8,6 +8,8 @@ module.exports = function(grunt) {
         copy: require('./.grunt/copy'),
         replace: require('./.grunt/replace'),
         less: require('./.grunt/less'),
+        cssmin:require('./.grunt/cssmin'),
+        clean:require('./.grunt/clean')
     
       });
 
@@ -16,8 +18,19 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
 
-    grunt.registerTask('build', ['copy:copy_files','replace:main_change','concat:js','less:convert','uglify:minify_js']);
+    grunt.registerTask('build', [
+        'copy:copy_files',
+        'replace:main_change',
+        'replace:index_change',
+        'concat:js',
+        'less:convert',
+        'uglify:minify_js',
+        'cssmin:minify_css',
+        'clean:clean_files'
+    ]);
     
 };
