@@ -1,6 +1,6 @@
-define(['jquery','underscore','backbone','collections/countriesCollection'],
+define(['jquery','underscore','backbone', 'tpl!views/templates/menu_view_template.html'],
 
-function($,_,Backbone, CountriesCollection){
+function($,_,Backbone, MenuViewTemplate){
     
 var MenuView = Backbone.View.extend({
     
@@ -13,7 +13,7 @@ var MenuView = Backbone.View.extend({
     },
 
     render: function() {
-        this.$el.html('<div id="menu"><button data-url= "home" class="nav-btn" id="home-btn">Home</button><button data-url= "favorites" class="nav-btn" id="fav-btn">My favorite countries</button></div>');
+        this.$el.html(MenuViewTemplate);
          $('#navBar').html(this.$el);
       },
        

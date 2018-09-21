@@ -6,11 +6,26 @@
             </div>
             <img width=400 height=300 src="<%= country.mapURL %>" >
             <ul>
-                <li>Capital - <span><%= country.capital %></span></li>
-                <li>Population - <span><%= country.population %></span></li>
-                <li>Languages - <span><%= country.languages %></span></li>
-                <li>Currency - <span><%= country.currencies[0]["name"] %></span></li>
-                <li>Region - <span><%= country.region %></span></li>
+                <li>
+                    <span class = "left" >Capital -</span> 
+                    <span class = "right"><%= country.capital %></span>
+                </li>
+                <li>
+                    <span class = "left">Population - </span>
+                    <span class = "right"><%= country.population %></span>
+                </li>
+                <li>
+                    <span class = "left">Languages - </span>
+                    <span class = "right"><%= country.languages %></span>
+                </li>
+                <li>
+                    <span class = "left">Currency - </span>
+                    <span class = "right"><%= country.currencies[0]["name"] %></span>
+                </li>
+                <li>
+                    <span class = "left">Region - </span>
+                    <span class = "right"><%= country.region %></span>
+                </li>
             </ul>
             <hr>
             <button id= "remBtn" class="rem-btn">Remove from my favorites</button><br>

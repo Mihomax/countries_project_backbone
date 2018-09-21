@@ -6,7 +6,16 @@ body {
 	/* #F5EDDB #F6EEEE */
 }
 
+
 body, p { font-size: 20px; }
+
+body { 
+	background: url(images/back.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 
 .countryIpt {
 	height:30px;

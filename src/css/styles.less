@@ -3,16 +3,25 @@
 @background-color: #F0F0F0;
 @font-family: Tahoma;
 @primary-color:#4285F4;
-@secondary-color: #36802D;
-@bigger-font: 20px;
 @smaller-font:10px;
+@bigger-font: 20px;
+@biggest-font: 25px;
 @text-color:#696969;
 @btn-shadow:  3px 4px 5px #696969;
 
+//functions
+
+.border-radius(@radius){
+	border-radius:@radius
+}
+
 body{
-    background: url(images/back.jpg) no-repeat center center fixed; 
+    background: url("../images/back.jpg") no-repeat center center fixed  ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     font-family: @font-family;
-    background: @background-color;
     font-size:@bigger-font;
     color:@text-color;
     margin:0;
@@ -34,24 +43,13 @@ body{
         box-shadow:@btn-shadow;
     }
 }
-.secondary-btn:extend(.btn) {
-    font-size:14px;
-	width:110px;
-    background-color:@secondary-color;
-    .border-radius(5px);
-    &:hover {
-        box-shadow:@btn-shadow;
-    }
-}
+
 nav {
     height: 60px;
-    
-    // background: rgb(94, 151, 243); // add less function
 }
 
 h1 {
     margin-left:40%;
-    
 }
 
 #container {
@@ -62,34 +60,23 @@ h1 {
 .text-input {
 	height:30px;
 	width:400px;
-    font-size: 25px;
+    font-size: @biggest-font;
     color:@text-color;
+    .border-radius(6px);
+    border:none;
 }
 
 #sortTemplate {
-    select {
-        .text-input;
-        width:200px;
-        font-size: 20px;
-    }
-    button {
-        width:80px;
-        height:30px;
-    }
-    margin-left:60%
-}
-
-// table.country-list-table {
-//     border-collapse: collapse;
-//     td,th {
-//         border-bottom: 2px solid lightgrey;
-// 	    padding: 20px;
-// 	    text-align: center;
-//     }
-// }
-
-.border-radius(@radius){
-	border-radius:@radius
+    margin-left:60%;
+        select {
+            .text-input;
+            width:200px;
+            font-size: @bigger-font;
+        }
+        button {
+            width:80px;
+            height:30px;
+        }
 }
 
 .country-card {
@@ -126,7 +113,7 @@ h1 {
 }
 
 .title .country-name {
-    font-size:25px;
+    font-size:@biggest-font;
     width:250px;
     float:left;
     padding:10px;
@@ -134,17 +121,19 @@ h1 {
 }
 ul {
     list-style: none;
-   
-  }
-  ul li {
-      text-align: left;
-      font-size:90%;
+    li {
+       font-size:90%;
+       width:350px;
+        .left {
+            width:100px;
+            display:inline-block;
+            }
+        .right {
+            font-size:110%;
+            font-weight:bold;
+            }
      }
-
-ul li span {
-    font-size:110%;
-   font-weight:bold;
-}
+  }
 
 .fav-btn {
     font-size:22px;

@@ -5,13 +5,30 @@
                 <span class= "country-name"><%= country.name %></span>
             </div>
             <img width=400 height=300 src="<%= country.mapURL %>" >
+            <div id="country-info">
             <ul>
-                <li>Capital - <span><%= country.capital %></span></li>
-                <li>Population - <span><%= country.population %></span></li>
-                <li>Languages - <span><%= country.languages %></span></li>
-                <li>Currency - <span><%= country.currencies[0]["name"] %></span></li>
-                <li>Region - <span><%= country.region %></span></li>
+                <li>
+                    <span class = "left" >Capital -</span> 
+                    <span class = "right"><%= country.capital %></span>
+                </li>
+                <li>
+                    <span class = "left">Population - </span>
+                    <span class = "right"><%= country.population %></span>
+                </li>
+                <li>
+                    <span class = "left">Languages - </span>
+                    <span class = "right"><%= country.languages %></span>
+                </li>
+                <li>
+                    <span class = "left">Currency - </span>
+                    <span class = "right"><%= country.currencies[0]["name"] %></span>
+                </li>
+                <li>
+                    <span class = "left">Region - </span>
+                    <span class = "right"><%= country.region %></span>
+                </li>
             </ul>
+            </div>
             <hr>
             <button onclick="$(this).html('&#10003')" class="fav-btn">Add to my favorites</button><br>
             <a href="https://en.wikipedia.org/wiki/<%= country.name %>" target="_blank">Click to know more via Wiki</a>
