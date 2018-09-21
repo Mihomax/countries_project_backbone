@@ -1,4 +1,4 @@
-define(['jquery','underscore','backbone', 'tpl!views/templates/menu_view_template.html'],
+define('MenuView',['jquery','underscore','backbone', 'tpl!views/templates/menu_view_template.html'],
 
 function($,_,Backbone, MenuViewTemplate){
     

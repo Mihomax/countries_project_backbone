@@ -1,9 +1,9 @@
-define([
+define('CountrySearchView',[
     'jquery',
     'underscore',
     'backbone', 
-    'collections/countriesCollection',
-    'views/countriesView', 
+    'CountriesCollection',
+    'CountriesView', 
     'tpl!views/templates/country_search_view.html'],
 
 function($,_,Backbone, CountriesCollection,CountriesView, SearchViewTemplate){

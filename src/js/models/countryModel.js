@@ -1,4 +1,4 @@
-define(['jquery','underscore','backbone'], function($,_,Backbone){
+define('CountryModel',['jquery','underscore','backbone'], function($,_,Backbone){
 
     var Country = Backbone.Model.extend({
 
@@ -40,10 +40,8 @@ define(['jquery','underscore','backbone'], function($,_,Backbone){
                 countriesArray.splice(i,1);
             } 
         }
-        
         countriesArray = JSON.stringify(countriesArray);
         localStorage.setItem("userLocalStorage", countriesArray); 
-        
     }
 
 

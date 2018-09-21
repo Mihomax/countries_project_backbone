@@ -1,9 +1,9 @@
 
-define([
+define('CountryView',[
     'jquery',
     'underscore',
     'backbone',
-    'models/mapModel',
+    'MapModel',
     'tpl!views/templates/country_view_template.html',
     'tpl!views/templates/fav_country_view_template.html'],
 
@@ -29,9 +29,9 @@ var CountryView = Backbone.View.extend({
         data.country.mapURL = mapModel.urlRoot;
 
         var languages = data.country.languages;
-        
-        // console.log(languages);
-        //checking data structure, small change if data is its initial version (received from API ), if not, in localstorage its already done
+      
+        //checking data structure, small change if data is its initial version (received from API ), 
+        //if not, in localstorage its already done
         if (languages[0]["name"]) {
             languages.forEach(function (lang,key) {
                 return languages[key]=lang.name;

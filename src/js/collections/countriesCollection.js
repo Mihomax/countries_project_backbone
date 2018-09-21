@@ -1,5 +1,5 @@
 
-define(['jquery','underscore','backbone','models/countryModel'], 
+define('CountriesCollection',['jquery','underscore','backbone','CountryModel'], 
 
 function($, _, Backbone, CountryModel ) {
     
@@ -13,9 +13,9 @@ function($, _, Backbone, CountryModel ) {
         sortByPopulation: function() {
 
             this.models.sort(function(a,b) {
-                         return a.attributes.population - b.attributes.population;
-                     });
-            },
+                return a.attributes.population - b.attributes.population;
+            });
+        },
          sortByRegion: function() {
             this.models.sort(function(a,b) {
                 if (a.attributes.region < b.attributes.region) //sort string ascending

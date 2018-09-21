@@ -3,10 +3,10 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'views/menuView',
-    'views/countrySearchView',
-    'views/countriesView',
-    "collections/countriesCollection",
+    'MenuView',
+    'CountrySearchView',
+    'CountriesView',
+    "CountriesCollection",
     ],
 
 function($,_,Backbone, MenuView, CountrySearchView, CountriesView, CountriesCollection){

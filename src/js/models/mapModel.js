@@ -1,4 +1,4 @@
-define(['jquery','underscore','backbone'], function($,_,Backbone){
+define('MapModel',['jquery','underscore','backbone'], function($,_,Backbone){
 
     var Map = Backbone.Model.extend({
 
