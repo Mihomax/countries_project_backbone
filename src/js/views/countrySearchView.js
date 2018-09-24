@@ -23,7 +23,7 @@ function($,_,Backbone, CountriesCollection,CountriesView, SearchViewTemplate){
                 $('#country-list').html("Oops ... please type letters in the field");
             }
             else {
-                // my collection with url(endpoint typed by user)
+                // initiating collection with url(endpoint typed by user)
                 var countries = new CountriesCollection ({url:"https://restcountries.eu/rest/v2/name/" + typedValue}); 
                 countries.fetch({
                     success: function() {

@@ -11,7 +11,7 @@ require.config({
 
         "CountryModel": "models/countryModel",
         "CountriesCollection": "collections/countriesCollection",
-        
+                
         "MapModel": "models/mapModel",
         "CountryView": "views/countryView",
         "CountriesView": "views/countriesView",

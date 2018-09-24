@@ -1,6 +1,6 @@
 # countries_project_backbone
 
-Countries_App  - A quick API based application in order to find and get some info on the country you are interested in.
+Countries_App  - A quick API based application in order to find and get info on the country you are interested in.
 
 With the application you can search countries by typing its name or key letters. If there is such country/countries in our planet :) , 
 you'll see one or list of your searched countries with its flag, map, and some other important information on them. If you want to know more about that particular country you can directly redirect to wikipedia. You can add your preferred countries to your favorites and then explore them separately in "My favorite countries" section. Also, you can sort your list of countries by population or region. 

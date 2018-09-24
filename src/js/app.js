@@ -32,6 +32,7 @@ function($,_,Backbone, MenuView, CountrySearchView, CountriesView, CountriesColl
             
     viewFavorites: function() {
             $('#searchDiv').empty();
+            //checking if localstorage is empty
             var currStorage = localStorage.getItem("userLocalStorage");
                 if (!currStorage || currStorage.length <= 2 ) {
                     $('#country-list').html("Your favorites are empty...");

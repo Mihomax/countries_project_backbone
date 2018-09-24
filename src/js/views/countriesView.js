@@ -22,7 +22,6 @@ var CountriesView = Backbone.View.extend({
     },
     //checks the sortBy option in order to call appropriate method from collection
     onSortChoice: function () {
-        
         var sortBy = $("#sortChoice").val();
         if (sortBy === "population") {
             this.collection.sortByPopulation();
