@@ -4,7 +4,7 @@
                 <img width=100 height=60 src="<%= country.flag %>" >
                 <span class= "country-name"><%= country.name %></span>
             </div>
-            <img width=400 height=300 src="<%= country.mapURL %>" >
+            <img width=400 height=260 src="<%= country.mapURL %>" >
             <ul>
                 <li>
                     <span class = "left" >Capital -</span> 
@@ -28,8 +28,10 @@
                 </li>
             </ul>
             <hr>
-            <button id= "remBtn" class="rem-btn">Remove from my favorites</button><br>
-            <a href="https://en.wikipedia.org/wiki/<%= country.name %>" target="_blank">Click to know more via Wiki</a>
+            <div class="card-bottom">
+                <button id= "remBtn" class="rem-btn">Remove from my favorites</button><br>
+                <a href="https://en.wikipedia.org/wiki/<%= country.name %>" target="_blank">Click to know more via Wiki</a>
+            </div>
     </div>
 
 

@@ -4,7 +4,7 @@
                 <img width=100 height=60 src="<%= country.flag %>" >
                 <span class= "country-name"><%= country.name %></span>
             </div>
-            <img width=400 height=300 src="<%= country.mapURL %>" >
+            <img width=400 height=260 src="<%= country.mapURL %>" >
             <div id="country-info">
             <ul>
                 <li>
@@ -30,8 +30,10 @@
             </ul>
             </div>
             <hr>
-            <button onclick="$(this).html('&#10003')" class="fav-btn">Add to my favorites</button><br>
-            <a href="https://en.wikipedia.org/wiki/<%= country.name %>" target="_blank">Click to know more via Wiki</a>
+            <div class="card-bottom">
+                <button onclick="$(this).html('&#10003')" class="fav-btn">Add to my favorites</button><br>
+                <a href="https://en.wikipedia.org/wiki/<%= country.name %>" target="_blank">Click to know more via Wiki</a>
+            </div>
     </div>
 
 

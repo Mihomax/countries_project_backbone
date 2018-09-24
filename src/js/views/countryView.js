@@ -51,7 +51,6 @@ var CountryView = Backbone.View.extend({
                 }
             };
         }
-        
         this.$el.html(template(data));
         return this;
     },

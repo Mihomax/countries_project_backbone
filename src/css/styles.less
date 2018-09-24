@@ -8,6 +8,7 @@
 @biggest-font: 25px;
 @text-color:#696969;
 @btn-shadow:  3px 4px 5px #696969;
+@debug: true;
 
 //functions
 
@@ -81,7 +82,7 @@ h1 {
 
 .country-card {
     width:400px;
-    height:660px;
+    height:630px;
     .border-radius(6px);
     background: white;
     box-shadow: 2px 3px 12px 3px #83878D;
@@ -99,40 +100,50 @@ h1 {
             color: @primary-color;
             background-color:@primary-color;
         }
+        .title{
+            width:400px;
+            float:left;
+            img {
+                padding:10px;
+                float:left
+            }
+            .country-name {
+                text-align:center;
+                width:250px;
+                float:left;
+                padding:10px;
+                font-weight:bold;
+            } 
+        }
+        .card-bottom {
+            margin-top:20px;
+            text-align:center;
+            a,button {
+                margin:auto;
+            }
+        }
 }
 
-.title{
-    width:400px;
-    float:left;
-    
-}
 
-.title img {
-    padding:10px;
-    float:left
-}
-
-.title .country-name {
-    font-size:@biggest-font;
-    width:250px;
-    float:left;
-    padding:10px;
-    font-weight:bold;
-}
 ul {
     list-style: none;
+    margin-bottom:0px;
+    margin-top:5px;
     li {
        font-size:90%;
-       width:350px;
+       overflow:hidden;
+       text-overflow: ellipsis;
         .left {
             width:100px;
             display:inline-block;
             }
         .right {
-            font-size:110%;
+            font-size:105%;
             font-weight:bold;
+            overflow: hidden;
             }
      }
+     
   }
 
 .fav-btn {
@@ -145,7 +156,7 @@ ul {
     font-weight: bold;
     cursor:pointer;
     &:hover {
-        text-shadow: 1px 1px #83878D;
+        font-size:125%;
     }
   
 }

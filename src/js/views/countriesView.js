@@ -9,10 +9,6 @@ var CountriesView = Backbone.View.extend({
         "click #sortBtn":"onSortChoice",
     },
     
-    initialize: function () {
-       
-    },
- 
     render: function () {
         this.$el.empty();
         //initially adding a template to its element
@@ -26,6 +22,7 @@ var CountriesView = Backbone.View.extend({
     },
     //checks the sortBy option in order to call appropriate method from collection
     onSortChoice: function () {
+        
         var sortBy = $("#sortChoice").val();
         if (sortBy === "population") {
             this.collection.sortByPopulation();
@@ -34,6 +31,7 @@ var CountriesView = Backbone.View.extend({
         else {
             this.collection.sortByRegion();
             this.render();
+            $("#sortChoice").val("region");
         }
     }
 
