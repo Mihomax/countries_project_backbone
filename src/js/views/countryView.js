@@ -40,16 +40,17 @@ var CountryView = Backbone.View.extend({
             data.country.languages = languages.join();
         }
         
-         // checking if country is in localstorage or no, in order to decide which template of countryView to load
-        var storage = localStorage.getItem("userLocalStorage");
-        storage = JSON.parse(storage);
         var template = CountryViewTemplate;
-        
-        for (var i =0;i<storage.length;i++) {
-            if (storage[i].name === data.country.name) {
-                template = FavCountryViewTemplate;
-            }
-        };
+        // checking if country is in localstorage or no, in order to decide which template of countryView to load
+        var storage = localStorage.getItem("userLocalStorage");
+        if (storage !== null) {
+            storage = JSON.parse(storage);
+            for (var i =0;i<storage.length;i++) {
+                if (storage[i].name === data.country.name) {
+                    template = FavCountryViewTemplate;
+                }
+            };
+        }
         
         this.$el.html(template(data));
         return this;
